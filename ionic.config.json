@@ -1,0 +1,7 @@
+{
+  "name": "comicstoreapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
