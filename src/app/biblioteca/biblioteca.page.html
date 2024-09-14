@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Biblioteca</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="cards-container">
+    <app-card-biblio
+      *ngFor="let card of cards"
+      [imageSrc]="card.imageSrc"
+      [title]="card.title"
+      [subtitle]="card.subtitle"
+    ></app-card-biblio>
+  </div>
+</ion-content>
