@@ -7,6 +7,12 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
+
+  {
+    path: 'ajustes',
+    loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
+  },
+
 ];
 
 @NgModule({
