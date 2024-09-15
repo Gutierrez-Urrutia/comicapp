@@ -8,13 +8,15 @@ import { BibliotecaPageRoutingModule } from './biblioteca-routing.module';
 
 import { BibliotecaPage } from './biblioteca.page';
 import { CardBiblioComponent } from '../card-biblio/card-biblio.component';
+import { TitleModule } from '../title/title.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BibliotecaPageRoutingModule
+    BibliotecaPageRoutingModule,
+    TitleModule
   ],
   declarations: [BibliotecaPage, CardBiblioComponent]
 })
