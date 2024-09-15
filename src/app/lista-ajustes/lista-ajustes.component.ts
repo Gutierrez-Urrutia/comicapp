@@ -19,5 +19,4 @@ export class ListaAjustesComponent  implements OnInit {
       {id:4, nombre:'Ajuste 4'}
     ]
   };
-
 }

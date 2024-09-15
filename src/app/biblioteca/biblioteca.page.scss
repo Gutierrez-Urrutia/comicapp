@@ -1,0 +1,28 @@
+.cards-container{
+    width: 90%;
+    margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+    }
+}

@@ -1,0 +1,19 @@
+img {
+  width: 100%;
+  display: block;
+
+  max-width: auto;                  
+  height: auto;                 
+}
+
+ion-card-header {
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0; 
+}
+
+ion-card{
+  margin-bottom: 0px;
+  flex: 50%;
+  margin: 0;
+  height: 100%;
+}

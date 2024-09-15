@@ -13,6 +13,15 @@ const routes: Routes = [
     loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
   },
 
+  {
+    path: 'biblioteca',
+    loadChildren: () => import('./biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
+  },  {
+    path: 'leyendo',
+    loadChildren: () => import('./leyendo/leyendo.module').then( m => m.LeyendoPageModule)
+  },
+
+
 ];
 
 @NgModule({
@@ -22,3 +31,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

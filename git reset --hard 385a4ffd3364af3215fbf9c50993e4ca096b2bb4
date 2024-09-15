@@ -1,0 +1,79 @@
+[33mcommit 0148abe0bcd10a4a31d1f55b6ac8b6ca3128ec83[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mhernan[m[33m)[m
+Author: Hernan Lopez <her.lopezs@duocuc.cl>
+Date:   Sat Sep 14 13:40:55 2024 -0300
+
+    Se agrega página con cards
+
+[33mcommit 723356bd4fd70b7ca6bf85167187aa7004654e77[m
+Merge: 1351c52 385a4ff
+Author: Hernan Lopez <her.lopezs@duocuc.cl>
+Date:   Sat Sep 14 00:58:23 2024 -0300
+
+    Merge branch 'main' into hernan
+
+[33mcommit 385a4ffd3364af3215fbf9c50993e4ca096b2bb4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Pablo Gutiérrez <pa.gutierrezu@duocuc.cl>
+Date:   Sat Sep 14 00:56:39 2024 -0300
+
+    Cambio de leyenda a botones de barra
+
+[33mcommit 1351c52918989a0d2ab4f77b299f4bf526481f26[m
+Merge: f89b042 04744e2
+Author: Hernan Lopez <her.lopezs@duocuc.cl>
+Date:   Sat Sep 14 00:43:20 2024 -0300
+
+    Merge branch 'main' into hernan
+
+[33mcommit f89b04242ec31e562bcee61db85c99776b3efa8b[m[33m ([m[1;31morigin/hernan[m[33m)[m
+Author: Hernan Lopez <her.lopezs@duocuc.cl>
+Date:   Sat Sep 14 00:30:18 2024 -0300
+
+    Rama Hernan
+
+[33mcommit 04744e2839249eaae5a11346e9af73cfaba40f91[m[33m ([m[1;31morigin/pablo[m[33m)[m
+Author: Pablo Gutiérrez <pa.gutierrezu@duocuc.cl>
+Date:   Fri Sep 6 17:25:34 2024 -0400
+
+    Se agrega barra de opciones
+
+[33mcommit 619b40d6d17fcbdf79d9ee0c6d1df9c65eaeaa90[m
+Merge: dfc74f6 828c4b4
+Author: Pablo Gutiérrez <pa.gutierrezu@duocuc.cl>
+Date:   Fri Sep 6 17:12:45 2024 -0400
+
+    Merge branch 'main' of https://github.com/Gutierrez-Urrutia/comicapp into pablo
+
+[33mcommit dfc74f6a467afcc2c8875f7c4ad8f8110a608c8c[m
+Author: Pablo Gutiérrez <pa.gutierrezu@duocuc.cl>
+Date:   Tue Sep 3 19:52:43 2024 -0400
+
+     Changes to be committed:
+            modified:   package-lock.json
+            modified:   package.json
+
+[33mcommit 828c4b4d06c6ddf524d156af953f9ec8f8aad61d[m
+Merge: ce6453d a803096
+Author: Pablo Gutiérrez Urrutia <135166062+Gutierrez-Urrutia@users.noreply.github.com>
+Date:   Sun Sep 1 21:46:38 2024 -0400
+
+    Merge pull request #1 from Gutierrez-Urrutia/pablo
+    
+    Rama pablo
+
+[33mcommit a803096989c481e6fbb8175ae7ae22c7b5e5a96e[m
+Author: pablo <pa.gutierrezu@duocuc.cl>
+Date:   Sun Sep 1 21:44:58 2024 -0400
+
+    Rama pablo
+
+[33mcommit ce6453d48f6a2fd6b45a222afb577c18636181ac[m
+Author: pablo <pa.gutierrezu@duocuc.cl>
+Date:   Sun Sep 1 21:41:22 2024 -0400
+
+    Se borró home page
+
+[33mcommit e7865ed923890c3dbceacb00bce0a9b84eb36935[m
+Author: pablo <pa.gutierrezu@duocuc.cl>
+Date:   Sat Aug 31 13:19:25 2024 -0400
+
+    Initial commit

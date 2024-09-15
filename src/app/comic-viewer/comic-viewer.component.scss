@@ -1,0 +1,14 @@
+.div-comic {
+    position: relative;
+    padding-top: max(60%, 324px);
+    height: 100%;
+}
+
+.iframe-comic {
+    position: absolute;
+    border: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
