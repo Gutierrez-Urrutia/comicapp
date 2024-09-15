@@ -1,9 +1,9 @@
 
 <ion-list>
-  @for (item of items; track item.path){
+  @for (item of items; track item.id){
     <ion-item>
-      <ion-label routerLink="/{{item}}">
-        {{item}}
+      <ion-label>
+        {{ item.nombre }}
       </ion-label>
     </ion-item>
   }

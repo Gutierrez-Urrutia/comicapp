@@ -12,8 +12,11 @@ export class ListaAjustesComponent  implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    this.items = ['Ajuste 1', 'Ajuste 2', 'Ajuste 3','Ajuste 4']
-     
+    this.items = [
+      {id:1, nombre:'Ajuste 1'},
+      {id:2, nombre:'Ajuste 2'},
+      {id:3, nombre:'Ajuste 3'},
+      {id:4, nombre:'Ajuste 4'},
+    ] 
   };
-
 }
