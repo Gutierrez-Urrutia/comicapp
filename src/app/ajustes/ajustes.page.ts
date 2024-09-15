@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajustes.page.scss'],
 })
 export class AjustesPage implements OnInit {
-
+  private static isFirstLoad: boolean = true;
   constructor() { }
 
   ngOnInit() {
@@ -14,7 +14,10 @@ export class AjustesPage implements OnInit {
   }
 
   ionViewDidEnter(){
-    this.poblarAcordeon();
+    if (AjustesPage.isFirstLoad) {
+      this.poblarAcordeon();
+      AjustesPage.isFirstLoad = false;
+    }
   }
 
   poblarAcordeon(): void {
