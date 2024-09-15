@@ -5,13 +5,15 @@ import { IonicModule } from '@ionic/angular';
 import { LeyendoPageRoutingModule } from './leyendo-routing.module';
 import { LeyendoPage } from './leyendo.page';
 import { ComicViewerComponent } from '../comic-viewer/comic-viewer.component';
+import { TitleModule } from '../title/title.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LeyendoPageRoutingModule
+    LeyendoPageRoutingModule, 
+    TitleModule
   ],
   declarations: [LeyendoPage, ComicViewerComponent]
 })
