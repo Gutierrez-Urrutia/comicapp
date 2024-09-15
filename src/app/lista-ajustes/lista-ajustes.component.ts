@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 export class ListaAjustesComponent  implements OnInit {
   items:any[] =[]
 
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit() {
-    this.items = [
-      {id:1, nombre:'Ajuste 1'},
+    this.items =[
+      {id:1, nombre:'Ajuste 1'}, 
       {id:2, nombre:'Ajuste 2'},
       {id:3, nombre:'Ajuste 3'},
-      {id:4, nombre:'Ajuste 4'},
-    ] 
+      {id:4, nombre:'Ajuste 4'}
+    ]
   };
 }

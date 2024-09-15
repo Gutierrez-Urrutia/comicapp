@@ -1,10 +1,28 @@
 
-<ion-list>
+
+
+<ion-accordion-group>
   @for (item of items; track item.id){
-    <ion-item>
-      <ion-label>
-        {{ item.nombre }}
-      </ion-label>
-    </ion-item>
+  <ion-accordion >
+  
+      <ion-item class="ion-padding" slot="header">
+        <ion-label >{{item.nombre}}</ion-label>
+      </ion-item>
+      
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <ion-toggle justify="space-between">Activar</ion-toggle>
+        </ion-item>
+        <ion-item >
+          <ion-select justify="space-between" label="Selecciona una opción" label-placement="opción" placeholder="OPCIONES">
+            <ion-select-option value="YES">YES</ion-select-option>
+            <ion-select-option value="NO">NO</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      
+  </ion-accordion>
   }
-</ion-list>
+</ion-accordion-group> 
+ 
+
