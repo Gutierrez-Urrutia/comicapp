@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
+    redirectTo: '/portada',
     pathMatch: 'full'
   },
 
@@ -16,9 +16,14 @@ const routes: Routes = [
   {
     path: 'biblioteca',
     loadChildren: () => import('./biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
-  },  {
+  },
+  {
     path: 'leyendo',
     loadChildren: () => import('./leyendo/leyendo.module').then( m => m.LeyendoPageModule)
+  },
+  {
+    path: 'portada',
+    loadChildren: () => import('./portada/portada.module').then( m => m.PortadaPageModule)
   },
 
 

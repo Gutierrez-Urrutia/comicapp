@@ -8,13 +8,15 @@ import { AjustesPageRoutingModule } from './ajustes-routing.module';
 
 import { AjustesPage } from './ajustes.page';
 import { ListaAjustesComponent } from '../lista-ajustes/lista-ajustes.component';
+import { TitleModule } from '../title/title.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AjustesPageRoutingModule
+    AjustesPageRoutingModule,
+    TitleModule
   ],
   declarations: [AjustesPage,ListaAjustesComponent]
 })
