@@ -10,14 +10,16 @@ import { BibliotecaPage } from './biblioteca.page';
 import { CardBiblioComponent } from '../card-biblio/card-biblio.component';
 import { TitleModule } from '../title/title.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     BibliotecaPageRoutingModule,
-    TitleModule
+    TitleModule,
   ],
   declarations: [BibliotecaPage, CardBiblioComponent]
+  
 })
 export class BibliotecaPageModule {}

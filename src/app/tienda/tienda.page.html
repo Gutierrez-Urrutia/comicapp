@@ -1,0 +1,24 @@
+<app-title titleText="Tienda"></app-title>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      @for (comic of comics.data.results; track comic.id){
+        @if(comic.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'){
+          <ion-col size="6" size-md="3" class="margin-column">
+            <ion-card class="tarjeta">
+              <img alt="..." [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" />
+              <ion-card-header>
+                <ion-card-title>{{ comic.title }}</ion-card-title>
+                <ion-card-subtitle>{{ comic.description }}</ion-card-subtitle>
+              </ion-card-header>
+              <ion-button expand="full" class="boton">
+                Comprar
+              </ion-button>
+            </ion-card>
+          </ion-col>
+        }
+      }
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
