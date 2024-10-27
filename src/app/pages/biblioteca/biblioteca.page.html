@@ -1,19 +1,20 @@
 <app-title titleText="Biblioteca"></app-title>
 <ion-content>
-  <div class="cards-container">
-    @for (card  of cards; track card.id){
-      <ion-card>
-        <img alt="..." src="{{card.imageSrc}}" />
-        <ion-card-title></ion-card-title>
-        <ion-card-header>
-          <ion-card-title>{{card.title}}</ion-card-title>
-          <ion-card-subtitle>{{card.subtitle}}</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          
-        </ion-card-content>
-      </ion-card>
-    }
-  </div>
+  <!-- <div class="cards-container"> -->
+    <ion-grid>
+      <ion-row>
+        @for (card  of cards; track card.id){
+          <ion-col size="12" size-sm="6" class="margin-column">
+            <ion-card class="comic-card">
+              <img alt="..." src="{{card.imageSrc}}" />
+              <ion-card-header>
+                <ion-card-title>{{card.title}}</ion-card-title>
+                <ion-card-subtitle>{{card.subtitle}}</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        }
+      </ion-row>
+    </ion-grid>
+  <!-- </div> -->
 </ion-content>

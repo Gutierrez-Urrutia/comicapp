@@ -163,8 +163,8 @@ export class MarvelApiService {
   
   constructor(private readonly http: HttpClient) { }
 
-  obtenerComics(): Observable<Comic[]> {
-    return this.http.get<Comic[]>(this.url);
+  obtenerComics(): Observable<any> {
+    return this.http.get<any>(this.url);
 
   }
 } 
