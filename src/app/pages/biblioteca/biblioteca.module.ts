@@ -7,8 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { BibliotecaPageRoutingModule } from './biblioteca-routing.module';
 
 import { BibliotecaPage } from './biblioteca.page';
-import { CardBiblioComponent } from '../card-biblio/card-biblio.component';
-import { TitleModule } from '../title/title.module';
+import { CardBiblioComponent } from '../../components/card-biblio/card-biblio.component';
+import { SharedComponentsModule } from 'src/app/components/shared/shared-components.module';
+
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { TitleModule } from '../title/title.module';
     FormsModule,
     IonicModule,
     BibliotecaPageRoutingModule,
-    TitleModule,
+    SharedComponentsModule
   ],
   declarations: [BibliotecaPage, CardBiblioComponent]
   

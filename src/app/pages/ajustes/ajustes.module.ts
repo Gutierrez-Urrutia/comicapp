@@ -7,8 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { AjustesPageRoutingModule } from './ajustes-routing.module';
 
 import { AjustesPage } from './ajustes.page';
-import { ListaAjustesComponent } from '../lista-ajustes/lista-ajustes.component';
-import { TitleModule } from '../title/title.module';
+import { ListaAjustesComponent } from '../../components/lista-ajustes/lista-ajustes.component';
+import { SharedComponentsModule } from 'src/app/components/shared/shared-components.module';
+
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { TitleModule } from '../title/title.module';
     FormsModule,
     IonicModule,
     AjustesPageRoutingModule,
-    TitleModule
+    SharedComponentsModule
+    
   ],
   declarations: [AjustesPage,ListaAjustesComponent]
 })

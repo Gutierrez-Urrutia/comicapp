@@ -10,23 +10,24 @@ const routes: Routes = [
 
   {
     path: 'ajustes',
-    loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
+    loadChildren: () => import('./pages/ajustes/ajustes.module').then( m => m.AjustesPageModule)
   },
 
   {
     path: 'biblioteca',
-    loadChildren: () => import('./biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
+    loadChildren: () => import('./pages/biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
   },
   {
     path: 'leyendo',
-    loadChildren: () => import('./leyendo/leyendo.module').then( m => m.LeyendoPageModule)
+    loadChildren: () => import('./pages/leyendo/leyendo.module').then( m => m.LeyendoPageModule)
   },
   {
     path: 'portada',
-    loadChildren: () => import('./portada/portada.module').then( m => m.PortadaPageModule)
-  },  {
+    loadChildren: () => import('./pages/portada/portada.module').then( m => m.PortadaPageModule)
+  },
+  {
     path: 'tienda',
-    loadChildren: () => import('./tienda/tienda.module').then( m => m.TiendaPageModule)
+    loadChildren: () => import('./pages/tienda/tienda.module').then( m => m.TiendaPageModule)
   },
 
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TitleComponent } from './title.component';
+import { TitleComponent } from './title/title.component';
 import { IonicModule } from '@ionic/angular';
 
 
@@ -8,10 +8,9 @@ import { IonicModule } from '@ionic/angular';
 @NgModule({
   declarations: [TitleComponent],
   imports: [
-    CommonModule, IonicModule
+    CommonModule,
+    IonicModule
   ],
-  exports: [
-    TitleComponent
-  ]
+  exports:[TitleComponent]
 })
-export class TitleModule { }
+export class SharedComponentsModule { }

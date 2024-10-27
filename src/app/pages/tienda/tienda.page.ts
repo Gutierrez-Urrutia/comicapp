@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MarvelApiService } from '../services/marvel-api.service';
+import { MarvelApiService } from '../../services/marvel-api.service';
 
 @Component({
   selector: 'app-tienda',
