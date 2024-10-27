@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarvelApiService } from '../../services/marvel-api.service';
+import { Comic } from '../../interfaces/comic';
+import { Response } from '../../interfaces/response';
 
 @Component({
   selector: 'app-tienda',
@@ -7,24 +9,18 @@ import { MarvelApiService } from '../../services/marvel-api.service';
   styleUrls: ['./tienda.page.scss'],
 })
 export class TiendaPage implements OnInit {
-
-  comics: any = [];
-  constructor(private readonly marvelService: MarvelApiService) { }
+  comics: Comic[] = [];
+  constructor(private readonly marvelService: MarvelApiService) {}
 
   ngOnInit(): void {
-
- 
     const comics = localStorage.getItem('comics');
-
-    if(comics){
+    if (comics) {
       this.comics = JSON.parse(comics);
     } else {
-      this.marvelService.obtenerComics().subscribe((response: any) =>{
-        this.comics = response;
+      this.marvelService.obtenerComics().subscribe((response: Response) => {
+        this.comics = response.data.results;
         localStorage.setItem('comics', JSON.stringify(this.comics));
-        
       });
     }
   }
-
 }
