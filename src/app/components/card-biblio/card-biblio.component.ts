@@ -1,19 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-biblio',
   templateUrl: './card-biblio.component.html',
   styleUrls: ['./card-biblio.component.scss'],
 })
-export class CardBiblioComponent  implements OnInit {
+export class CardBiblioComponent {
 
   @Input() imageSrc: string = "";
   @Input() title: string = "";
   @Input() subtitle: string = "";
-
-  constructor() { }
-
-  ngOnInit() {
-    console.log('Card Iniciada');
-  }
+  
 }
