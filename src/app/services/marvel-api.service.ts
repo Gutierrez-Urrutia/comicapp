@@ -19,7 +19,7 @@ export class MarvelApiService {
     'https://gateway.marvel.com:443/v1/public/comics';
   private readonly url: string =
     this.apiUrl +
-    `?ts=${this.timestamp}&apikey=${this.publicKey}&hash=${this.hash}&limit=100`;
+    `?ts=${this.timestamp}&apikey=${this.publicKey}&hash=${this.hash}&limit=50`;
 
   constructor(private readonly http: HttpClient) {}
 
