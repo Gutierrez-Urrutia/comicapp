@@ -39,9 +39,14 @@ export class AjustesPage implements OnInit {
       ionToggle2.innerHTML = 'Activar Modo Oscuro';
       ionItem2.appendChild(ionToggle2);
 
+      ionToggle2.addEventListener('ionChange', (event) => {
+        const isChecked = event.detail.checked;
+        document.body.classList.toggle('dark', isChecked);
+      });
+
       div1.appendChild(ionItem);
       div1.appendChild(ionItem2);
-      
+
       const label: any = document.querySelector('#label-ajuste-1');
       label.innerText = 'Pantalla';
 
@@ -131,6 +136,7 @@ export class AjustesPage implements OnInit {
     
   }
 
+  
  
 
 }
