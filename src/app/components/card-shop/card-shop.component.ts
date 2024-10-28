@@ -31,7 +31,7 @@ export class CardShopComponent {
   }
 
   setColumnSize(width: number) {
-    this.columnSize = width >= 768 ? 3 : 6; // Cambia según tu lógica
+    this.columnSize = width >= 768 ? 3 : 6;
   }
 
   @HostListener('window:resize', ['$event'])
