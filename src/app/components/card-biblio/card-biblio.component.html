@@ -1,11 +1,13 @@
-
-  <ion-card>
-    <div>
-      <img alt="{{title}}" [src]="imageSrc" />
+<ion-row>
+  @for (card of cards; track card.id){
+  <ion-col [size]="columnSize" class="margin-column">
+    <ion-card class="comic-card">
+      <img alt="..." src="{{card.imageSrc}}" />
       <ion-card-header>
-        <ion-card-subtitle>{{subtitle}}</ion-card-subtitle>
-        <ion-card-title>{{title}}</ion-card-title>
+        <ion-card-title>{{card.title}}</ion-card-title>
+        <ion-card-subtitle>{{card.subtitle}}</ion-card-subtitle>
       </ion-card-header>
-    </div>
-  </ion-card>
-
+    </ion-card>
+  </ion-col>
+  }
+</ion-row>
