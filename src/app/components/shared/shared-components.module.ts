@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { TitleComponent } from './title/title.component';
 import { IonicModule } from '@ionic/angular';
 
-
-
 @NgModule({
   declarations: [TitleComponent],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    
   ],
   exports:[TitleComponent]
 })

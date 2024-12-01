@@ -1,18 +1,9 @@
-img {
-  width: 100%;
-  display: block;
-
-  max-width: auto;                  
-  height: auto;                 
-}
-
-ion-card-header {
-  padding: 10px 20px;
-  border-radius: 8px 8px 0 0; 
-}
-
-ion-card{
-  flex: 50%;
-  margin: 0px;
+.comic-card {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+}
+
+.margin-column {
+  margin-bottom: 20px;
 }
