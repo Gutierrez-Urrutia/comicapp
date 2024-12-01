@@ -7,6 +7,8 @@ import { TiendaPage } from './tienda.page';
 import { HttpClientModule } from '@angular/common/http';
 import { MarvelApiService } from '../../services/marvel-api.service';
 import { SharedComponentsModule } from 'src/app/components/shared/shared-components.module';
+import { CardShopComponent } from 'src/app/components/card-shop/card-shop.component';
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,7 @@ import { SharedComponentsModule } from 'src/app/components/shared/shared-compone
     HttpClientModule,
     SharedComponentsModule
   ],
-  declarations: [TiendaPage],
+  declarations: [TiendaPage, CardShopComponent],
   providers:[MarvelApiService]
 })
 export class TiendaPageModule {}
