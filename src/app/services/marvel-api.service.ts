@@ -24,6 +24,7 @@ export class MarvelApiService {
   constructor(private readonly http: HttpClient) {}
 
   obtenerComics(): Observable<Response> {
+    
     return this.http.get<Response>(this.url);
   }
 }

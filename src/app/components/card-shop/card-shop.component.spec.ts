@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { CardShopComponent } from './card-shop.component';
+import { MarvelApiService } from 'src/app/services/marvel-api.service';
 
 describe('CardShopComponent', () => {
   let component: CardShopComponent;
@@ -10,7 +11,10 @@ describe('CardShopComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CardShopComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot()], 
+      providers:[
+        {provide:MarvelApiService, useValue:{}}
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardShopComponent);

@@ -18,6 +18,7 @@ export class TiendaPage implements OnInit {
       this.comics = JSON.parse(comics);
     } else {
       this.marvelService.obtenerComics().subscribe((response: Response) => {
+        console.log(response);
         this.comics = response.data.results;
         localStorage.setItem('comics', JSON.stringify(this.comics));
       });
