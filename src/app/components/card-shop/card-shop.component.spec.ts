@@ -27,20 +27,20 @@ describe('CardShopComponent', () => {
   });
 
   it('Debería quedar en 3 el columnSize si el ancho es mayor o igual a 768', () => {
-    component.setColumnSize(800);  
+    component.setColumnSize(800); 
     expect(component.columnSize).toBe(3);
   });
 
   it('Debería quedar en 6 el columnSize si el ancho es menor que 768', () => {
-    component.setColumnSize(600); 
+    component.setColumnSize(600);
     expect(component.columnSize).toBe(6);
   });
 
   it('Debería llamar a setColumnSize con window.innerWidth al redimensionar', () => {
     spyOn(component, 'setColumnSize');
     const mockEvent = { target: { innerWidth: 800 } };
-    component.onResize(mockEvent as unknown as Event);
-    expect(component.setColumnSize).toHaveBeenCalledWith(800);
+    component.onResize(mockEvent as unknown as Event);  
+    expect(component.setColumnSize).toHaveBeenCalledWith(800); 
   });
 
 });
