@@ -46,7 +46,23 @@ describe('AjustesPage', () => {
 
   afterEach(() => {
     // Limpiar el DOM después de cada prueba
-    document.body.innerHTML = '';
+    const div1 = document.querySelector('#ajuste1');
+    const div2 = document.querySelector('#ajuste2');
+    const div3 = document.querySelector('#ajuste3');
+    const div4 = document.querySelector('#ajuste4');
+    const label1 = document.querySelector('#label-ajuste-1');
+    const label2 = document.querySelector('#label-ajuste-2');
+    const label3 = document.querySelector('#label-ajuste-3');
+    const label4 = document.querySelector('#label-ajuste-4');
+
+    if (div1) document.body.removeChild(div1);
+    if (div2) document.body.removeChild(div2);
+    if (div3) document.body.removeChild(div3);
+    if (div4) document.body.removeChild(div4);
+    if (label1) document.body.removeChild(label1);
+    if (label2) document.body.removeChild(label2);
+    if (label3) document.body.removeChild(label3);
+    if (label4) document.body.removeChild(label4);
   });
 
   it('should create', () => {
