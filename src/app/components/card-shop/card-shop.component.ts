@@ -23,10 +23,15 @@ export class CardShopComponent {
     if (comics) {
       this.comics = JSON.parse(comics);
     } else {
-      this.marvelService.obtenerComics().subscribe((response: Response) => {
-        this.comics = response.data.results;
-        localStorage.setItem('comics', JSON.stringify(this.comics));
-      });
+      this.marvelService.obtenerComics().subscribe(
+        (response: Response) => {
+          this.comics = response.data.results;
+          localStorage.setItem('comics', JSON.stringify(this.comics));
+        },
+        (error) => {
+          console.error('Error al obtener los cómics', error);
+        }
+      );
     }
   }
 

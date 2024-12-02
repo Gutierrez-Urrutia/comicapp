@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { of } from 'rxjs';
 import { CardShopComponent } from './card-shop.component';
 import { MarvelApiService } from 'src/app/services/marvel-api.service';
-import { SharedComponentsModule } from '../shared/shared-components.module';
+
 
 let marvelApiServiceMock: any;
 describe('CardShopComponent', () => {
@@ -11,12 +11,12 @@ describe('CardShopComponent', () => {
   let fixture: ComponentFixture<CardShopComponent>;
 
   beforeEach(waitForAsync(() => {
-    marvelApiServiceMock = jasmine.createSpyObj('MarvelApiService', ['getCharacters']);
+    marvelApiServiceMock = jasmine.createSpyObj('MarvelApiService', ['obtenerComics']);
     TestBed.configureTestingModule({
       declarations: [ CardShopComponent ],
       imports: [IonicModule.forRoot()], 
       providers:[
-        {provide:MarvelApiService, useValue: of({})}
+        {provide: MarvelApiService, useValue: marvelApiServiceMock}
       ]
     }).compileComponents();
 

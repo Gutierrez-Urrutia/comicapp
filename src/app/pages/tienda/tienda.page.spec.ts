@@ -2,16 +2,20 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { IonicModule } from '@ionic/angular';
 import { TiendaPage } from './tienda.page';
 import { MarvelApiService } from 'src/app/services/marvel-api.service';
-import { MarvelApiServiceMock } from 'src/app/mocks/MarvelApiServiceMock';
 import { responseMock } from 'src/app/mocks/response.mock';
-import { SharedComponentsModule } from 'src/app/components/shared/shared-components.module';
+import { of } from 'rxjs';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 
 describe('TiendaPage', () => {
   let component: TiendaPage;
   let fixture: ComponentFixture<TiendaPage>;
-
+  let service: MarvelApiService;
   beforeEach(async () => {
+    let marvelApiServiceMock = {
+      obtenerComics: jasmine.createSpy('obtenerComics').and.returnValue(of(responseMock))
+    };
 
     await TestBed.configureTestingModule({
       declarations: [ TiendaPage ],
@@ -19,13 +23,16 @@ describe('TiendaPage', () => {
       providers: [
         {
           provide: MarvelApiService,
-          useValue: MarvelApiServiceMock
+          useValue: marvelApiServiceMock
         }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TiendaPage);
+    component = fixture.componentInstance; 
     fixture.detectChanges();
+    service = TestBed.inject(MarvelApiService);
   });
 
   it('should create', () => {
@@ -43,7 +50,7 @@ describe('TiendaPage', () => {
     component.ngOnInit();
     tick();
     expect(component.comics).toEqual(responseMock.data.results);
-    expect(MarvelApiServiceMock.obtenerComics).toHaveBeenCalled();
+    expect(service.obtenerComics).toHaveBeenCalled();
   }));
   
 });
