@@ -31,13 +31,13 @@ describe('TiendaPage', () => {
     expect(TiendaPage).toBeTruthy();
   });
 
-  it('debería cargar los cómics desde localStorage si están disponibles', () => {
+  it('Debería cargar los cómics desde localStorage si están disponibles', () => {
     localStorage.setItem('comics', JSON.stringify(responseMock.data.results));
     fixture.detectChanges();
     expect(component.comics).toEqual(responseMock.data.results);
   });
 
-  it('debería obtener los cómics desde MarvelApiService si no hay cómics en localStorage', fakeAsync(() => {
+  it('Debería obtener los cómics desde MarvelApiService si no hay cómics en localStorage', fakeAsync(() => {
     localStorage.removeItem('comics');
     component.ngOnInit();
     tick();
