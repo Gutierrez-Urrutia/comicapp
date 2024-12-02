@@ -1,3 +1,13 @@
+### ACTUALIZACIÓN SEGUNDA ENTREGA ###
+- Se generan Tabs a partir de lista
+- Se agrega carpeta y modulo de componentes compartidos
+- Se reordena el proyecto en carpetas
+- Se agrega tab de Tienda
+- Se consume API de Marvel
+- Se agrega funcionalidad de Modo Oscuro
+- Se agrega libreria BCrypt para el manejo de HASH en API
+- Se ajustan cards en Tienda y Biblioteca
+    
 # Proyecto Comic+
 
 ## Integrantes:
