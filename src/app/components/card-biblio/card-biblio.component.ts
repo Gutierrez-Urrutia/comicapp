@@ -34,5 +34,4 @@ export class CardBiblioComponent {
     this.setColumnSize(target.innerWidth);
   }
 
-
 }
