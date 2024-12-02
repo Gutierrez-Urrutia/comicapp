@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { TiendaPage } from './tienda.page';
 import { MarvelApiService } from 'src/app/services/marvel-api.service';
 import { MarvelApiServiceMock } from 'src/app/mocks/MarvelApiServiceMock';
+import { SharedComponentsModule } from 'src/app/components/shared/shared-components.module';
 
 
 describe('TiendaPage', () => {
