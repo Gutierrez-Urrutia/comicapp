@@ -6,7 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TabBarModule } from './tab-bar/tab-bar.module';
+import { TabBarModule } from './components/tab-bar/tab-bar.module';
 
 @NgModule({
   declarations: [AppComponent],

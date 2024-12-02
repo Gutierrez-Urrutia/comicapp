@@ -1,0 +1,20 @@
+<ion-row class="cards-container">
+@for (comic of comics; track comic.id){
+  @if(comic.thumbnail.path !==
+  'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available' && comic.pageCount !==0){
+  <ion-col [size]="columnSize" class="margin-column">
+    <ion-card class="tarjeta">
+      <img
+        alt="..."
+        [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"
+      />
+      <ion-card-header >
+        <ion-card-title>{{ comic.title }}</ion-card-title>
+        <ion-card-subtitle>Páginas: {{comic.pageCount }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-button expand="full" class="boton"> Comprar </ion-button>
+    </ion-card>
+  </ion-col>
+  } 
+}
+</ion-row>
