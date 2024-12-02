@@ -25,47 +25,22 @@ describe('CardShopComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
 
-import { CardShopComponent } from './card-shop.component';
-import { of } from 'rxjs';
+  it('Debería quedar en 3 el columnSize si el ancho es mayor o igual a 768', () => {
+    component.setColumnSize(800);  
+    expect(component.columnSize).toBe(3);
+  });
 
-let marvelApiServiceMock: any;
+  it('Debería quedar en 6 el columnSize si el ancho es menor que 768', () => {
+    component.setColumnSize(600); 
+    expect(component.columnSize).toBe(6);
+  });
 
-describe('CardShopComponent', () => {
-  let component: CardShopComponent;
-  let fixture: ComponentFixture<CardShopComponent>;
-
-
-  beforeEach(waitForAsync(() => {
-
-    marvelApiServiceMock = {
-      obtenerComics: jasmine.createSpy('obtenerComics').and.returnValue(
-        of({
-          data:{
-            results:[
-              {id: 1, title: 'comic1'},
-              {id: 2, title: 'comic2'}
-            ]
-          }
-        })
-      )
-    }
-
-    TestBed.configureTestingModule({
-      declarations: [ CardShopComponent ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(CardShopComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Debería llamar a setColumnSize con window.innerWidth al redimensionar', () => {
+    spyOn(component, 'setColumnSize');
+    const mockEvent = { target: { innerWidth: 800 } };
+    component.onResize(mockEvent as unknown as Event);
+    expect(component.setColumnSize).toHaveBeenCalledWith(800);
   });
 
 });
