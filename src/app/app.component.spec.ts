@@ -1,6 +1,7 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { APP_ID, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { asapScheduler } from 'rxjs';
 
 describe('AppComponent', () => {
   let component: AppComponent;
