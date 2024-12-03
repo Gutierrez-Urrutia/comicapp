@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { CardShopComponent } from './card-shop.component';
 import { MarvelApiService } from 'src/app/services/marvel-api.service';
 import { responseMock } from 'src/app/mocks/response.mock';
-import { of } from 'rxjs';
+
 
 describe('CardShopComponent', () => {
   let component: CardShopComponent;
@@ -11,17 +11,12 @@ describe('CardShopComponent', () => {
   let service: MarvelApiService;
 
   beforeEach(waitForAsync(() => {
-    let marvelApiServiceMock = {
-      obtenerComics: jasmine.createSpy('obtenerComics').and.returnValue(of(responseMock))
-    };
     TestBed.configureTestingModule({
       declarations: [ CardShopComponent ],
       imports: [IonicModule.forRoot()], 
       providers:[
-        {
-          provide: MarvelApiService, 
-          useValue: marvelApiServiceMock}
-      ],
+        {provide:MarvelApiService, useValue:{}}
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardShopComponent);
@@ -35,20 +30,20 @@ describe('CardShopComponent', () => {
   });
 
   it('Debería quedar en 3 el columnSize si el ancho es mayor o igual a 768', () => {
-    component.setColumnSize(800);  
+    component.setColumnSize(800); 
     expect(component.columnSize).toBe(3);
   });
 
   it('Debería quedar en 6 el columnSize si el ancho es menor que 768', () => {
-    component.setColumnSize(600); 
+    component.setColumnSize(600);
     expect(component.columnSize).toBe(6);
   });
 
   it('Debería llamar a setColumnSize con window.innerWidth al redimensionar', () => {
     spyOn(component, 'setColumnSize');
     const mockEvent = { target: { innerWidth: 800 } };
-    component.onResize(mockEvent as unknown as Event);
-    expect(component.setColumnSize).toHaveBeenCalledWith(800);
+    component.onResize(mockEvent as unknown as Event);  
+    expect(component.setColumnSize).toHaveBeenCalledWith(800); 
   });
 
   it('Debería cargar los cómics desde localStorage si están disponibles', () => {
@@ -64,5 +59,7 @@ describe('CardShopComponent', () => {
     expect(component.comics).toEqual(responseMock.data.results);
     expect(service.obtenerComics).toHaveBeenCalled();
   }));
+
+  
 
 });

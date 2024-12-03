@@ -5,10 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './leyendo.page.html',
   styleUrls: ['./leyendo.page.scss'],
 })
-export class LeyendoPage  {
-
-  constructor() { }
-
- 
+export class LeyendoPage {
 
 }
