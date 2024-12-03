@@ -5,19 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './ajustes.page.html',
   styleUrls: ['./ajustes.page.scss'],
 })
-export class AjustesPage implements OnInit {
-  private static isFirstLoad: boolean = true;
+export class AjustesPage {
+  
+  public static isFirstLoad: boolean = true;
+  
   constructor() { }
-
-  ngOnInit() {
-   
-  }
 
   ionViewDidEnter(){
     if (AjustesPage.isFirstLoad) {
       this.poblarAcordeon();
       AjustesPage.isFirstLoad = false;
     }
+  }
+
+  toggleDarkMode(isDarkMode: boolean): void {
+    document.body.classList.toggle('dark', isDarkMode);
   }
 
   poblarAcordeon(): void {
@@ -41,7 +43,7 @@ export class AjustesPage implements OnInit {
 
       ionToggle2.addEventListener('ionChange', (event) => {
         const isChecked = event.detail.checked;
-        document.body.classList.toggle('dark', isChecked);
+        this.toggleDarkMode(isChecked);
       });
 
       div1.appendChild(ionItem);
