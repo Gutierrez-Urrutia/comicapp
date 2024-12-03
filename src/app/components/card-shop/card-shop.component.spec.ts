@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angul
 import { IonicModule } from '@ionic/angular';
 import { CardShopComponent } from './card-shop.component';
 import { MarvelApiService } from 'src/app/services/marvel-api.service';
+import { responseMock } from 'src/app/mocks/response.mock';
+
 
 describe('CardShopComponent', () => {
   let component: CardShopComponent;
