@@ -18,6 +18,10 @@ export class AjustesPage {
     }
   }
 
+  toggleDarkMode(isDarkMode: boolean): void {
+    document.body.classList.toggle('dark', isDarkMode);
+  }
+
   poblarAcordeon(): void {
     const div1: HTMLElement | any = document.querySelector('#ajuste1');
     const div2: HTMLElement | any = document.querySelector('#ajuste2');
@@ -39,7 +43,7 @@ export class AjustesPage {
 
       ionToggle2.addEventListener('ionChange', (event) => {
         const isChecked = event.detail.checked;
-        document.body.classList.toggle('dark', isChecked);
+        this.toggleDarkMode(isChecked);
       });
 
       div1.appendChild(ionItem);

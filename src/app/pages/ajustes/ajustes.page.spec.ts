@@ -45,7 +45,7 @@ describe('AjustesPage', () => {
   });
 
   afterEach(() => {
-    // Limpiar el DOM después de cada prueba
+    
     const div1 = document.querySelector('#ajuste1');
     const div2 = document.querySelector('#ajuste2');
     const div3 = document.querySelector('#ajuste3');
@@ -81,26 +81,6 @@ describe('AjustesPage', () => {
     AjustesPage.isFirstLoad = true;
     component.ionViewDidEnter();
     expect(AjustesPage.isFirstLoad).toBe(false);
-  });
-
-  it('Debería cambiar el tema a oscuro cuando el toggle de Modo Oscuro se activa', () => {
-    component.poblarAcordeon();
-    const toggle = document.querySelector('#ajuste1 ion-toggle:nth-child(2)');
-    if (toggle) {
-      toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: true } }));
-      fixture.detectChanges();
-      expect(document.body.classList.contains('dark')).toBe(true);
-    }
-  });
-
-  it('Debería cambiar el tema a claro cuando el toggle de Modo Oscuro se desactiva', () => {
-    component.poblarAcordeon();
-    const toggle = document.querySelector('#ajuste1 ion-toggle:nth-child(2)');
-    if (toggle) {
-      toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: false } }));
-      fixture.detectChanges();
-      expect(document.body.classList.contains('dark')).toBe(false);
-    }
   });
 
   it('Debería poblar acordeones correctamente', () => {
@@ -192,6 +172,17 @@ describe('AjustesPage', () => {
     if (label) {
       expect((label as HTMLElement).innerText).toBe('Fondo');
     }
+  });
+
+  it('should enable dark mode', () => {
+    component.toggleDarkMode(true);
+    expect(document.body.classList.contains('dark')).toBeTrue();
+  });
+
+  it('should disable dark mode', () => {
+    document.body.classList.add('dark');
+    component.toggleDarkMode(false);
+    expect(document.body.classList.contains('dark')).toBeFalse();
   });
 
 });
