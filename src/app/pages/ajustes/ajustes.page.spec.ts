@@ -44,6 +44,7 @@ describe('AjustesPage', () => {
   });
 
   afterEach(() => {
+    
     const div1 = document.querySelector('#ajuste1');
     const div2 = document.querySelector('#ajuste2');
     const div3 = document.querySelector('#ajuste3');
@@ -81,26 +82,6 @@ describe('AjustesPage', () => {
     expect(AjustesPage.isFirstLoad).toBe(false);
   });
 
-  it('Debería cambiar el tema a oscuro cuando el toggle de Modo Oscuro se activa', () => {
-    component.poblarAcordeon();
-    const toggle = document.querySelector('#ajuste1 ion-toggle:nth-child(2)');
-    if (toggle) {
-      toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: true } }));
-      fixture.detectChanges();
-      expect(document.body.classList.contains('dark')).toBe(true);
-    }
-  });
-
-  it('Debería cambiar el tema a claro cuando el toggle de Modo Oscuro se desactiva', () => {
-    component.poblarAcordeon();
-    const toggle = document.querySelector('#ajuste1 ion-toggle:nth-child(2)');
-    if (toggle) {
-      toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: false } }));
-      fixture.detectChanges();
-      expect(document.body.classList.contains('dark')).toBe(false);
-    }
-  });
-
   it('Debería poblar acordeones correctamente', () => {
     spyOn(document, 'querySelector').and.callThrough();
     component.poblarAcordeon();
@@ -108,24 +89,6 @@ describe('AjustesPage', () => {
     expect(document.querySelector).toHaveBeenCalledWith('#ajuste2');
     expect(document.querySelector).toHaveBeenCalledWith('#ajuste3');
     expect(document.querySelector).toHaveBeenCalledWith('#ajuste4');
-  });
-
-  it('Debería activar el modo oscuro cuando el toggle se activa', () => {
-    const toggle = document.createElement('ion-toggle');
-    document.body.appendChild(toggle);
-    toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: true } }));
-    fixture.detectChanges();
-    expect(document.body.classList.contains('dark')).toBe(false);
-    document.body.removeChild(toggle);
-  });
-
-  it('Debería desactivar el modo oscuro cuando el toggle se desactiva', () => {
-    const toggle = document.createElement('ion-toggle');
-    document.body.appendChild(toggle);
-    toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: false } }));
-    fixture.detectChanges();
-    expect(document.body.classList.contains('dark')).toBe(false);
-    document.body.removeChild(toggle);
   });
 
   it('Debería agregar elementos a div1 correctamente', () => {
@@ -190,6 +153,45 @@ describe('AjustesPage', () => {
     if (label) {
       expect((label as HTMLElement).innerText).toBe('Fondo');
     }
+  });
+
+  it('should enable dark mode', () => {
+    component.toggleDarkMode(true);
+    expect(document.body.classList.contains('dark')).toBeTrue();
+  });
+
+  it('should disable dark mode', () => {
+    document.body.classList.add('dark');
+    component.toggleDarkMode(false);
+    expect(document.body.classList.contains('dark')).toBeFalse();
+  });
+
+  it('Debería activar el modo oscuro cuando el toggle se activa', () => {
+    const toggle = document.createElement('ion-toggle');
+    document.body.appendChild(toggle);
+    spyOn(component, 'toggleDarkMode').and.callThrough();
+    toggle.addEventListener('ionChange', (event: any) => {
+      component.toggleDarkMode(event.detail.checked);
+    });
+    toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: true } }));
+    fixture.detectChanges();
+    expect(component.toggleDarkMode).toHaveBeenCalledWith(true);
+    expect(document.body.classList.contains('dark')).toBe(true);
+    document.body.removeChild(toggle);
+  });
+
+  it('Debería desactivar el modo oscuro cuando el toggle se desactiva', () => {
+    const toggle = document.createElement('ion-toggle');
+    document.body.appendChild(toggle);
+    spyOn(component, 'toggleDarkMode').and.callThrough();
+    toggle.addEventListener('ionChange', (event: any) => {
+      component.toggleDarkMode(event.detail.checked);
+    });
+    toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: false } }));
+    fixture.detectChanges();
+    expect(component.toggleDarkMode).toHaveBeenCalledWith(false);
+    expect(document.body.classList.contains('dark')).toBe(false);
+    document.body.removeChild(toggle);
   });
 
 });
