@@ -10,7 +10,6 @@ describe('AjustesPage', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
 
-    // Agregar elementos necesarios al DOM
     const div1 = document.createElement('div');
     div1.id = 'ajuste1';
     document.body.appendChild(div1);
@@ -45,7 +44,6 @@ describe('AjustesPage', () => {
   });
 
   afterEach(() => {
-    // Limpiar el DOM después de cada prueba
     const div1 = document.querySelector('#ajuste1');
     const div2 = document.querySelector('#ajuste2');
     const div3 = document.querySelector('#ajuste3');
