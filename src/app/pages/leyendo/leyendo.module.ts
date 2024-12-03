@@ -16,6 +16,7 @@ import { SharedComponentsModule } from 'src/app/components/shared/shared-compone
     LeyendoPageRoutingModule, 
     SharedComponentsModule
   ],
+  exports:[SharedComponentsModule],
   declarations: [LeyendoPage, ComicViewerComponent]
 })
 export class LeyendoPageModule {}

@@ -1,29 +1,26 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
 import { CardShopComponent } from './card-shop.component';
 import { MarvelApiService } from 'src/app/services/marvel-api.service';
-import { of } from 'rxjs';
 
 describe('CardShopComponent', () => {
   let component: CardShopComponent;
   let fixture: ComponentFixture<CardShopComponent>;
+  let service: MarvelApiService;
 
   beforeEach(waitForAsync(() => {
-
-    marvelApiServiceMock = jasmine.createSpyObj('MarvelApiService', ['obtenerComics']);
-
     TestBed.configureTestingModule({
       declarations: [ CardShopComponent ],
       imports: [IonicModule.forRoot()], 
       providers:[
-        {provide:MarvelApiService, useValue: marvelApiServiceMock }
+        {provide:MarvelApiService, useValue:{}}
       ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardShopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    service = TestBed.inject(MarvelApiService);
   }));
 
   it('should create', () => {
@@ -46,5 +43,21 @@ describe('CardShopComponent', () => {
     component.onResize(mockEvent as unknown as Event);  
     expect(component.setColumnSize).toHaveBeenCalledWith(800); 
   });
+
+  it('Debería cargar los cómics desde localStorage si están disponibles', () => {
+    localStorage.setItem('comics', JSON.stringify(responseMock.data.results));
+    fixture.detectChanges();
+    expect(component.comics).toEqual(responseMock.data.results);
+  });
+
+  it('Debería obtener los cómics desde MarvelApiService si no hay cómics en localStorage', fakeAsync(() => {
+    localStorage.removeItem('comics');
+    component.ngOnInit();
+    tick();
+    expect(component.comics).toEqual(responseMock.data.results);
+    expect(service.obtenerComics).toHaveBeenCalled();
+  }));
+
+  
 
 });
