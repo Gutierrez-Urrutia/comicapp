@@ -5,11 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './leyendo.page.html',
   styleUrls: ['./leyendo.page.scss'],
 })
-export class LeyendoPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class LeyendoPage {
 
 }
