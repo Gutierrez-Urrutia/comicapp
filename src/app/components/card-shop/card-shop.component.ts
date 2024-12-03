@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MarvelApiService} from 'src/app/services/marvel-api.service';
 import { Comic } from 'src/app/interfaces/comic';
 import { Response } from 'src/app/interfaces/response';
-import { HostListener } from '@angular/core';
+
 
 @Component({
   selector: 'app-card-shop',
@@ -23,8 +23,7 @@ export class CardShopComponent {
     if (comics) {
       this.comics = JSON.parse(comics);
     } else {
-      this.marvelService.obtenerComics().subscribe(
-        (response: Response) => {
+      this.marvelService.obtenerComics().subscribe((response: Response) => {
           this.comics = response.data.results;
           localStorage.setItem('comics', JSON.stringify(this.comics));
         },
