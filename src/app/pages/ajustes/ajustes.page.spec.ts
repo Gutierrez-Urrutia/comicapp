@@ -91,24 +91,6 @@ describe('AjustesPage', () => {
     expect(document.querySelector).toHaveBeenCalledWith('#ajuste4');
   });
 
-  it('Debería activar el modo oscuro cuando el toggle se activa', () => {
-    const toggle = document.createElement('ion-toggle');
-    document.body.appendChild(toggle);
-    toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: true } }));
-    fixture.detectChanges();
-    expect(document.body.classList.contains('dark')).toBe(false);
-    document.body.removeChild(toggle);
-  });
-
-  it('Debería desactivar el modo oscuro cuando el toggle se desactiva', () => {
-    const toggle = document.createElement('ion-toggle');
-    document.body.appendChild(toggle);
-    toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: false } }));
-    fixture.detectChanges();
-    expect(document.body.classList.contains('dark')).toBe(false);
-    document.body.removeChild(toggle);
-  });
-
   it('Debería agregar elementos a div1 correctamente', () => {
     const div1 = document.querySelector('#ajuste1');
     component.poblarAcordeon();
@@ -182,6 +164,34 @@ describe('AjustesPage', () => {
     document.body.classList.add('dark');
     component.toggleDarkMode(false);
     expect(document.body.classList.contains('dark')).toBeFalse();
+  });
+
+  it('Debería activar el modo oscuro cuando el toggle se activa', () => {
+    const toggle = document.createElement('ion-toggle');
+    document.body.appendChild(toggle);
+    spyOn(component, 'toggleDarkMode').and.callThrough();
+    toggle.addEventListener('ionChange', (event: any) => {
+      component.toggleDarkMode(event.detail.checked);
+    });
+    toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: true } }));
+    fixture.detectChanges();
+    expect(component.toggleDarkMode).toHaveBeenCalledWith(true);
+    expect(document.body.classList.contains('dark')).toBe(true);
+    document.body.removeChild(toggle);
+  });
+
+  it('Debería desactivar el modo oscuro cuando el toggle se desactiva', () => {
+    const toggle = document.createElement('ion-toggle');
+    document.body.appendChild(toggle);
+    spyOn(component, 'toggleDarkMode').and.callThrough();
+    toggle.addEventListener('ionChange', (event: any) => {
+      component.toggleDarkMode(event.detail.checked);
+    });
+    toggle.dispatchEvent(new CustomEvent('ionChange', { detail: { checked: false } }));
+    fixture.detectChanges();
+    expect(component.toggleDarkMode).toHaveBeenCalledWith(false);
+    expect(document.body.classList.contains('dark')).toBe(false);
+    document.body.removeChild(toggle);
   });
 
 });
