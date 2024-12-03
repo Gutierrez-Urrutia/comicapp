@@ -10,7 +10,6 @@ describe('AjustesPage', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
 
-    // Agregar elementos necesarios al DOM
     const div1 = document.createElement('div');
     div1.id = 'ajuste1';
     document.body.appendChild(div1);
