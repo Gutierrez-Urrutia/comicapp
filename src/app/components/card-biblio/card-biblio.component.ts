@@ -8,7 +8,7 @@ import { HostListener } from '@angular/core';
 })
 export class CardBiblioComponent {
 
-  columnSize: number = 5;
+  columnSize: number = 6;
 
   @Input() imageSrc: string = "";
   @Input() title: string = "";
