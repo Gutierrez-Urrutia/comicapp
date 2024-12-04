@@ -1,6 +1,6 @@
 ### ACTUALIZACIÓN TERCERA ENTREGA ###
 - Se agregan pruebas unitarias con karma/jasmine.
-- Se genera APK para instalar en Android: [Descargar APK]([https://nodejs.org/en](https://duoccl0-my.sharepoint.com/:u:/g/personal/pa_gutierrezu_duocuc_cl/ER74IvTq7K1Loo4dr57jRtsB_F33_vrffWzMpAq4QMbKWA?e=qulwUh))
+- Se genera APK para instalar en Android: [Descargar APK](https://duoccl0-my.sharepoint.com/:u:/g/personal/pa_gutierrezu_duocuc_cl/ER74IvTq7K1Loo4dr57jRtsB_F33_vrffWzMpAq4QMbKWA?e=qulwUh)
   
 ### ACTUALIZACIÓN SEGUNDA ENTREGA ###
 - Se generan Tabs a partir de lista
