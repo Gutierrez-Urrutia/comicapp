@@ -6,7 +6,7 @@
     <ion-card class="tarjeta">
       <img
         alt="..."
-        [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"
+        [src]="comic.thumbnail.path.replace('http', 'https') + '.' + comic.thumbnail.extension"
       />
       <ion-card-header >
         <ion-card-title>{{ comic.title }}</ion-card-title>
