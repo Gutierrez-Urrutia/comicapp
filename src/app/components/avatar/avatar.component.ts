@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-avatar',
@@ -16,7 +16,7 @@ export class AvatarComponent {
     try {
       this.foto = await Camera.getPhoto({
         quality: 90,
-        allowEditing: true,
+        allowEditing: false,
         resultType: CameraResultType.Uri,
         //source: CameraSource.Camera
       });
