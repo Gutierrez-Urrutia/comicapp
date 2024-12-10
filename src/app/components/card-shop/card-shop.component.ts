@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MarvelApiService} from 'src/app/services/marvel-api.service';
 import { Comic } from 'src/app/interfaces/comic';
 import { Response } from 'src/app/interfaces/response';
@@ -9,13 +9,14 @@ import { Response } from 'src/app/interfaces/response';
   templateUrl: './card-shop.component.html',
   styleUrls: ['./card-shop.component.scss'],
 })
-export class CardShopComponent {
+export class CardShopComponent implements OnInit{
 
   comics: Comic[] = [];
   columnSize: number = 6;
   
   constructor(private readonly marvelService: MarvelApiService) {
     this.setColumnSize(window.innerWidth);
+
   }
 
   ngOnInit(): void {
