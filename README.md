@@ -1,3 +1,7 @@
+### ACTUALIZACIÓN EXAMEN ###
+- Se agrega funcionalidad que utiliza la cámara del dispositivo móvil.
+- Se genera APK firmado para instalar en Android: [Descargar APK](https://duoccl0-my.sharepoint.com/:u:/g/personal/pa_gutierrezu_duocuc_cl/ETwvGk7T6XpAteoIhUqhlkIBLEfxevN0xBb1ZlRGl9Wsqg?e=WWCsda)
+
 ### ACTUALIZACIÓN TERCERA ENTREGA ###
 - Se agregan pruebas unitarias con karma/jasmine.
 - Se genera APK para instalar en Android: [Descargar APK](https://duoccl0-my.sharepoint.com/:u:/g/personal/pa_gutierrezu_duocuc_cl/ER74IvTq7K1Loo4dr57jRtsB_F33_vrffWzMpAq4QMbKWA?e=qulwUh)
