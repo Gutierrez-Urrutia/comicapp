@@ -1,27 +1,30 @@
-import { Component } from '@angular/core';
-import { Camera, CameraResultType } from '@capacitor/camera';
+import { Component, OnInit } from '@angular/core';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Component({
   selector: 'app-avatar',
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss'],
 })
-export class AvatarComponent {
+export class AvatarComponent implements OnInit {
   public foto: any;
   public fotoUrl: any;
 
   constructor() { }
-
+  ngOnInit(){
+    this.fotoUrl = localStorage.getItem('avatar');
+  }
   async sacarFoto() {
     try {
       this.foto = await Camera.getPhoto({
         quality: 90,
         allowEditing: false,
-        resultType: CameraResultType.Uri,
-        //source: CameraSource.Camera
+        resultType: CameraResultType.DataUrl,
+        source: CameraSource.Camera,
       });
 
-      this.fotoUrl = this.foto.webPath;
+      this.fotoUrl = this.foto.dataUrl;
+      localStorage.setItem('avatar', this.fotoUrl);
     } catch (error) {
       console.error('Error al tomar la foto:', error);
     }

@@ -46,4 +46,22 @@ export class CardShopComponent implements OnInit{
     this.setColumnSize(target.innerWidth);
   }
 
+  public alertButtons = [
+    {
+      text: 'No',
+      role: 'cancel',
+      cssClass: "alert-button-confirm",
+      id: 'alert-button-cancel',
+    },
+    {
+      text: 'Sí',
+      role: 'confirm',
+      cssClass: "alert-button-confirm",
+      id: 'alert-button-confirm',
+    },
+  ];
+
+  public header = '¿Desea continuar con la compra?';
+  public message = 'Será transferido a la plataforma de pagos';
+
 }
