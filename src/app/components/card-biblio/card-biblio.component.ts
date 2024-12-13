@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-card-biblio',
@@ -15,6 +16,7 @@ export class CardBiblioComponent {
   @Input() subtitle: string = "";
   
   cards = [
+    {id: 8, imageSrc: './../../assets/img/main.png', title: 'Dolmen #343', subtitle: '50 Páginas'},
     {id: 1, imageSrc: './../../assets/img/Daredevil1.jpg', title: 'Daredevil Vol5 #16', subtitle: '30 Páginas'},
     {id: 2, imageSrc: './../../assets/img/Daredevil2.jpg', title: 'Daredevil Vol1 #28', subtitle: '36 Páginas' },
     {id: 3, imageSrc: './../../assets/img/Spiderman1.jpg', title: 'Amazing Fantasy #15', subtitle: '35 Páginas'},
@@ -23,7 +25,8 @@ export class CardBiblioComponent {
     {id: 6, imageSrc: './../../assets/img/HomunculusVol1.jpg', title: 'Homunculus Vol1', subtitle: '225 Páginas'},
     {id: 7, imageSrc: './../../assets/img/BeckVol1.jpg', title: 'Beck Vol1', subtitle: '245 Páginas'},
   ];
-
+   constructor(private readonly navCtrl: NavController){
+   }
   setColumnSize(width: number) {
     this.columnSize = width >= 768 ? 3 : 6;
   }
@@ -32,6 +35,12 @@ export class CardBiblioComponent {
   onResize(event: Event) {
     const target = event.target as Window;
     this.setColumnSize(target.innerWidth);
+  }
+
+  cardClick(id: number) {
+    if(id === 8) {
+      this.navCtrl.navigateForward('/leyendo');
+    }
   }
 
 }

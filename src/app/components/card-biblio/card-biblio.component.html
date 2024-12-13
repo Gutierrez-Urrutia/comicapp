@@ -1,7 +1,7 @@
 <ion-row>
   @for (card of cards; track card.id){
   <ion-col [size]="columnSize" class="margin-column">
-    <ion-card class="comic-card">
+    <ion-card class="comic-card" (click)="cardClick(card.id)">
       <img alt="..." src="{{card.imageSrc}}" />
       <ion-card-header>
         <ion-card-title>{{card.title}}</ion-card-title>
